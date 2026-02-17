@@ -13,10 +13,15 @@
       <section class="favorites">
         <h1>Liste des favoris</h1>
         <div id="fav-list">
-          <div class="town-container flex bg-gray-50 gap-5">
-            <div class="town flex gap-4"> <!--TODO: ajouter un ID custom en js avec le nom de la ville après l'avoir fetch-->
+          <div class="town-container flex bg-gray-50 gap-5" id="town-container">
+            <span>
+              <input type="text" id="favourite-input" placeholder="Entrez un nom de ville ici..">
+              <button id="favourite-button">Ajouter aux favoris</button>
+              <span id="favourite-success-box"></span>
+            </span>
+            <!-- <div class="town"> <!--TODO: ajouter un ID custom en js avec le nom de la ville après l'avoir fetch
               <span class="title">NomDeVille</span>
-              <span class="hour">10:21</span>
+              <span class="hour">10:21</span> -->
             </div>
             <button class="deleteFavButton bg-red-500 px-2 py-1">Supp</button>
           </div>
@@ -24,5 +29,6 @@
       </section>
     </main>
     <footer></footer>
+    <script src="../js/favoris.js"></script>
   </body>
 </html>
