@@ -22,14 +22,40 @@ async function fetchWeatherData(city) {
     }
 }
 //* -----------CONSOLE LOG-------------------------
-fetchWeatherData("Bordeaux").then(data => {
-    console.log("Données reçues de l'API :", data);
-});
+// fetchWeatherData("Bordeaux").then(data => {
+//     console.log("Données reçues de l'API :", data);
+// });
 //* -----------------------------------------------
+
+function getIntensityDetails(data) {
+    // Analyse du Soleil (via les nuages) 
+    const clouds = data.clouds.all;
+    let sunText = "";
+    if (clouds < 10) sunText = "Soleil radieux ☀️​";
+    else if (clouds < 50) sunText = "Soleil voilé par quelques nuages 🌤️​";
+    else sunText = "Ciel couvert 🌥️​";
+
+    // Analyse du niveau de Pluie
+    let rainText = "Aucune pluie détectée";
+    if (data.rain && data.rain["1h"]) {
+        const volume = data.rain["1h"];
+        if (volume < 2.5) rainText = "Pluie fine / Bruine 🌦️​";
+        else if (volume < 10) rainText = "Pluie modérée 🌧️";
+        else rainText = "Forte pluie / Orage ​⛈️";
+    }
+    console.log("ID Météo reçu :", data.weather[0].id)
+    return { sunText, rainText, clouds };
+} //TODO -----------LA PLUIE SEMBLE NE PAS FONCTIONNER NORMALEMENT-------------
 
 // Ici pour récup le data de l'API
 function displayWeather(data) {
     if (!data) return; // Si pas de données, on s'arrête
+
+    // Récupération des interprétations
+    const intensity = getIntensityDetails(data);
+
+    document.getElementById("sunIntensity").textContent = intensity.sunText;
+    document.getElementById("rainIntensity").textContent = intensity.rainText;
 
     // 1. Sélectionner les éléments HTML par leur ID
     const cityElt = document.getElementById("cityName");
