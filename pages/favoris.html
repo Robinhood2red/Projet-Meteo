@@ -3,11 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../style.css">
     <title>Favoris</title>
   </head>
   <body>
     <header></header>
-    <main></main>
+    <main id="favourite_main">
+      <section class="favorites">
+        <h1>Liste des favoris</h1>
+        <div id="fav-list">
+          <div class="town-container flex bg-gray-50 gap-5">
+            <div class="town flex gap-4"> <!--TODO: ajouter un ID custom en js avec le nom de la ville après l'avoir fetch-->
+              <span class="title">NomDeVille</span>
+              <span class="hour">10:21</span>
+            </div>
+            <button class="deleteFavButton bg-red-500 px-2 py-1">Supp</button>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer></footer>
   </body>
 </html>
