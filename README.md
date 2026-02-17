@@ -81,3 +81,5 @@ Jour 2 : Premier console.log des données météo et affichage rudimentaire.
 Jour 3 : Mise en place du localStorage et peaufinage du CSS.
 
 Note pour Jérémie : Ce projet démontre votre capacité à travailler en modulaire (fichiers séparés) et à manipuler des objets JSON, ce qui est la base de tout développement d'application moderne.
+
+et voila !
