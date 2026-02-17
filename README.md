@@ -14,6 +14,7 @@ Données : Utilisation de l'API OpenWeatherMap (Gratuite).
 Stockage : localStorage pour les favoris.
 
 3. Répartition des Missions (Le "Qui fait quoi")
+
 🛠️ Développeur A : Le Maître des Données (Logique API)
 Ta mission est de faire le lien entre le monde réel et votre application.
 
@@ -82,4 +83,18 @@ Jour 3 : Mise en place du localStorage et peaufinage du CSS.
 
 Note pour Jérémie : Ce projet démontre votre capacité à travailler en modulaire (fichiers séparés) et à manipuler des objets JSON, ce qui est la base de tout développement d'application moderne.
 
-et voila !
+----------------------------------------------------------
+
+Ta Page (louis) : "Focus Expert & Météo Live"
+
+Ton angle unique : Affiche les données brutes et techniques que l'utilisateur lambda ne regarde pas (Pression atmosphérique, taux d'humidité précis, vitesse du vent, visibilité).
+
+Contenu exclusif : Un comparateur. L'utilisateur entre deux villes, et tu affiches laquelle est la plus chaude ou la plus venteuse en comparant deux appels API.
+
+Page Dev B : "Le Guide Voyage"
+
+Lui utilisera tes données pour dire : "Il pleut, prévoyez un musée" ou "Grand soleil, voici les parcs à visiter". Son focus est le conseil.
+
+Page Dev C : "L'Historique & Favoris"
+
+Lui affichera les villes précédemment cherchées (via le localStorage). Son focus est la mémoire.
