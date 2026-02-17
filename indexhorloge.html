@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Horloge mondiale</title>
+    <link rel="stylesheet" type="text/css" href="styleshorloge.css">
+    <script src="horloge.js" defer></script>
+</head>
+<body>
+    <div class="clock">
+      <h1>Horloge Universelle</h1>
+      <label for="time-zone">Sélectionnez votre fuseau horaire :</label>
+      <select id="time-zone" onchange="updateTime()">
+        <option value="America/New_York">New York</option>
+        <option value="Europe/Paris">Paris</option>
+        <option value="Asia/Tokyo">Tokyo</option>
+      </select>
+      <p id="time"></p>
+    </div>
+</body>
+</html>
