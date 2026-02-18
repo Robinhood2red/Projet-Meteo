@@ -1,15 +1,83 @@
-// ! PROPOSITION DE VARIABLES, LES ANCIENNES ETAIT PAS SUPER
+// --- VARIABLES GLOBALES ---
 $primary-color: #6c5ce7;
 $secondary-color: #a29bfe;
-$text-color: #ffffff; // ? UN PEU TROP BLANC ?
-$glass-bg: rgba(255, 255, 255, 0.15);
+$text-color: rgba(255, 255, 255, 0.95);
+$glass-bg: rgba(255, 255, 255, 0.12);
 $glass-border: rgba(255, 255, 255, 0.2);
+
+// --- VARIABLES DU HEADER ADAPTÉES ---
+$header-bg: rgba(0, 0, 0, 0.2);
+$header-accent: #fab1a0;
 
 // !? MIEUX QU'UTILISER UNE VARIABLE
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+// -----------------------------------HEADER-------------------------------------------------
+header {
+  // Fond sombre transparent
+  background-color: $header-bg;
+  backdrop-filter: blur(5px); 
+  border-bottom: 1px solid $glass-border;
+  padding: 1rem 0;
+  width: 100%;
+
+  section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        height: 45px;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); // TODO POUR LE LOGO
+      }
+    }
+  }
+
+  .menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+
+    .menuItem {
+      text-decoration: none;
+      color: $text-color;
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      position: relative; // ! SINON C'EST TOUT LE menuItem QUI EST SOULIGNé
+
+      // --- L'EFFET SOULIGNé
+      &::after {
+        content: ''; // OBLIGATOIRE
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: $header-accent;
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: $header-accent;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 // ---------------------------------------STYLES POUR LE BODY----------------------------------------------
@@ -20,7 +88,8 @@ $glass-border: rgba(255, 255, 255, 0.2);
   min-height: 100vh;
   // ! Dégradé background
   background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 100%);
-  @include flex-center;
+  display: flex;
+  flex-direction: column;
 }
 
 .weather-section {
