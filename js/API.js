@@ -27,27 +27,43 @@ async function fetchWeatherData(city) {
 // });
 //* -----------------------------------------------
 
-function getIntensityDetails(data) {
-    // Analyse du Soleil (via les nuages) 
+function getIntensityDetails(data) { // data pour appeller l'API
+    // Intensitée lumineuse
     const clouds = data.clouds.all;
     let sunText = "";
-    if (clouds < 10) sunText = "Soleil radieux ☀️​";
-    else if (clouds < 50) sunText = "Soleil voilé par quelques nuages 🌤️​";
-    else sunText = "Ciel couvert 🌥️​";
+    if (clouds < 10) sunText = "Soleil radieux ☀️";
+    else if (clouds < 50) sunText = "Soleil voilé par quelques nuages 🌤️";
+    else sunText = "Ciel couvert 🌥️";
 
-    // Analyse du niveau de Pluie
-    let rainText = "Aucune pluie détectée";
-    if (data.rain && data.rain["1h"]) {
-        const volume = data.rain["1h"];
-        if (volume < 2.5) rainText = "Pluie fine / Bruine 🌦️​";
-        else if (volume < 10) rainText = "Pluie modérée 🌧️";
-        else rainText = "Forte pluie / Orage ​⛈️";
+    // 2. Récupération de l'ID météo et du volume
+    const weatherId = data.weather[0].id;
+    const rainVolume = (data.rain && data.rain["1h"]) ? data.rain["1h"] : null;
+    let rainText = "Aucune pluie détectée ☁️";
+
+    // Ciblage du volume de nuage
+    if (weatherId >= 200 && weatherId < 600) {
+        // L'API confirme qu'il pleut ou qu'il y a de l'orage
+        if (rainVolume) {
+            // Si on a le volume précis, on utilise ton échelle
+            if (rainVolume < 2.5) rainText = "Pluie fine / Bruine 🌦️";
+            else if (rainVolume < 10) rainText = "Pluie modérée 🌧️";
+            else rainText = "Forte pluie / Orage ⛈️";
+        } else {
+            // Si l'objet rain est vide mais que l'ID dit qu'il pleut
+            rainText = "Précipitations en cours 🌧️";
+        }
+    } else if (weatherId === 804) {
+        // 804 est le maximum nuageux
+        rainText = "Ciel très chargé, risque d'averse ☁️";
     }
-    console.log("ID Météo reçu :", data.weather[0].id)
+
+    console.log("ID Météo reçu :", weatherId);
+    console.log("Volume pluie :", rainVolume);
+
     return { sunText, rainText, clouds };
 } //TODO -----------LA PLUIE SEMBLE NE PAS FONCTIONNER NORMALEMENT-------------
 
-// Ici pour récup le data de l'API
+// Ici pour récup le data de l'API ET afficher coté utilisateur
 function displayWeather(data) {
     if (!data) return; // Si pas de données, on s'arrête
 
@@ -57,14 +73,14 @@ function displayWeather(data) {
     document.getElementById("sunIntensity").textContent = intensity.sunText;
     document.getElementById("rainIntensity").textContent = intensity.rainText;
 
-    // 1. Sélectionner les éléments HTML par leur ID
+    // Sélectionne les éléments HTML par leur ID
     const cityElt = document.getElementById("cityName");
     const tempElt = document.getElementById("temp");
     const humidityElt = document.getElementById("humidity");
     const windElt = document.getElementById("wind");
     const feelsElt = document.getElementById("feelsLike");
 
-    // 2. Injecter les données précises de l'API
+    // Injecte les données précises de l'API coté utilisateur
     cityElt.textContent = `Météo à ${data.name}`;
     tempElt.textContent = Math.round(data.main.temp);
     humidityElt.textContent = data.main.humidity;
