@@ -1,1 +1,95 @@
+:root {
+  --bg-color: #FAF4D3;
+  --DarkBlue: #1C3041;
+  --Blue: #93BEDF;
+  --Green: #4FB477;
+  --Text-color: #191516;
+  --stylePrimary: display: flex, justify-content: center;
+}
+
+.api-body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-section {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  color: #ffffff;
+  text-align: center;
+}
+.weather-card input {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  outline: none;
+  width: 60%;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+.weather-card button {
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+  font-weight: bold;
+}
+.weather-card button:hover {
+  background: #a29bfe;
+  transform: translateY(-2px);
+}
+
+#cityName {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+#weatherDetails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30px;
+  text-align: left;
+}
+#weatherDetails p {
+  flex: 0 0 48%;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+#weatherDetails p span {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fab1a0;
+}/*# sourceMappingURL=style.css.map */
 /*# sourceMappingURL=style.css.map */

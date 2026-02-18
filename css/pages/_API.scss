@@ -1,0 +1,105 @@
+// ! PROPOSITION DE VARIABLES, LES ANCIENNES ETAIT PAS SUPER
+$primary-color: #6c5ce7;
+$secondary-color: #a29bfe;
+$text-color: #ffffff; // ? UN PEU TROP BLANC ?
+$glass-bg: rgba(255, 255, 255, 0.15);
+$glass-border: rgba(255, 255, 255, 0.2);
+
+// !? MIEUX QU'UTILISER UNE VARIABLE
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ---------------------------------------STYLES POUR LE BODY----------------------------------------------
+.api-body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; // ! à VOIR CE QUE çA DONNE SUR LES AUTRES PAGES
+  min-height: 100vh;
+  // ! Dégradé background
+  background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 100%);
+  @include flex-center;
+}
+
+.weather-section {
+  width: 100%;
+  padding: 20px;
+  @include flex-center;
+}
+
+// -----------------------------------------------EFFET VERRE------------------------------------------------
+.weather-card {
+  background: $glass-bg;
+  backdrop-filter: blur(10px); // L'EFFET FLOU
+  border: 1px solid $glass-border;
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  color: $text-color;
+  text-align: center;
+
+  // -------------------------------------------L'IMPUT--------------------------------------------------------
+  input {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    outline: none;
+    width: 60%;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+
+  button {
+    background: $primary-color;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    font-weight: bold;
+
+    &:hover { // ! ANIMATION BOUTON
+      background: $secondary-color;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// ----------------------------------------AFFICHAGE DONNéES------------------------------------------
+#cityName {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+#weatherDetails {
+  display: flex;
+  flex-wrap: wrap; // ! POUR QUE LES ELEMENTS PASSENT à LA LIGNE
+  justify-content: space-between;
+  margin-top: 30px;
+  text-align: left;
+
+  p {
+    flex: 0 0 48%; // ! PREND ENVIRON LA MOITIÉ DE LA LARGEUR (2 colonnes)
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    box-sizing: border-box; // ! POUR QUE LE PADDING NE CASSE PAS LA DISPOSITION 2 par 2
+
+    span {
+      display: block;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #fab1a0;
+    }
+  }
+}
