@@ -20,7 +20,7 @@ async function fetchWeatherData(city) {
         console.error("Erreur lors de la récupération :", error);
         return null;
     }
-}
+};
 //* -----------CONSOLE LOG-------------------------
 // fetchWeatherData("Bordeaux").then(data => {
 //     console.log("Données reçues de l'API :", data);
@@ -31,11 +31,11 @@ function getIntensityDetails(data) { // data pour appeller l'API
     // Intensitée lumineuse
     const clouds = data.clouds.all;
     let sunText = "";
-    if (clouds < 10) sunText = "Soleil radieux ☀️";
+    if (clouds < 15) sunText = "Soleil radieux ☀️";
     else if (clouds < 50) sunText = "Soleil voilé par quelques nuages 🌤️";
     else sunText = "Ciel couvert 🌥️";
 
-    // 2. Récupération de l'ID météo et du volume
+    // Récupération de l'ID météo et du volume
     const weatherId = data.weather[0].id;
     const rainVolume = (data.rain && data.rain["1h"]) ? data.rain["1h"] : null;
     let rainText = "Aucune pluie détectée ☁️";
@@ -60,8 +60,8 @@ function getIntensityDetails(data) { // data pour appeller l'API
     console.log("ID Météo reçu :", weatherId);
     console.log("Volume pluie :", rainVolume);
 
-    return { sunText, rainText, clouds };
-} //TODO -----------LA PLUIE SEMBLE NE PAS FONCTIONNER NORMALEMENT-------------
+    return { sunText, rainText, clouds }; // Renvoie une info et arète la fonction --- Cloture et renvoie la fonction. return est une instruction
+};
 
 // Ici pour récup le data de l'API ET afficher coté utilisateur
 function displayWeather(data) {
@@ -84,20 +84,19 @@ function displayWeather(data) {
     cityElt.textContent = `Météo à ${data.name}`;
     tempElt.textContent = Math.round(data.main.temp);
     humidityElt.textContent = data.main.humidity;
-    windElt.textContent = Math.round(data.wind.speed * 3.6); // Conversion m/s en km/h
+    windElt.textContent = Math.round(data.wind.speed * 3.6); // ! Conversion m/s en km/h
     feelsElt.textContent = Math.round(data.main.feels_like);
 }
 const btn = document.getElementById("searchBtn");
 const input = document.getElementById("cityInput");
 
 btn.addEventListener("click", async () => {
-    const ville = input.value;
-    if (ville !== "") {
+    const town = input.value;
+    if (town !== "") {
         // Appelle la fonction de ton fichier api.js
-        const weatherData = await fetchWeatherData(ville);
+        const weatherData = await fetchWeatherData(town);
         
         // Pour envoyer le résultat à la fonction d'affichage
         displayWeather(weatherData);
     }
 });
-

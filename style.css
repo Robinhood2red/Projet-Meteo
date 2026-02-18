@@ -7,6 +7,60 @@
   --stylePrimary: display: flex, justify-content: center;
 }
 
+header {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 0;
+  width: 100%;
+}
+header section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+header section div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header section div img {
+  height: 45px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+header .menu {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+header .menu .menuItem {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+header .menu .menuItem::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #fab1a0;
+  transition: width 0.3s ease;
+}
+header .menu .menuItem:hover {
+  color: #fab1a0;
+}
+header .menu .menuItem:hover::after {
+  width: 100%;
+}
+
 .api-body {
   margin: 0;
   padding: 0;
@@ -14,8 +68,7 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 100%);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
 .weather-section {
@@ -27,7 +80,7 @@
 }
 
 .weather-card {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
@@ -35,7 +88,7 @@
   width: 100%;
   max-width: 450px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.95);
   text-align: center;
 }
 .weather-card input {
