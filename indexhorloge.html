@@ -3,20 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Horloge mondiale</title>
+    <title>Horloge mondiale</title>
     <link rel="stylesheet" type="text/css" href="styleshorloge.css">
-    <script src="horloge.js" defer></script>
+    <link rel="stylesheet" href="styleshorloge.css">
+    
 </head>
-<body>
-    <div class="clock">
-      <h1>Horloge Universelle</h1>
-      <label for="time-zone">Sélectionnez votre fuseau horaire :</label>
-      <select id="time-zone" onchange="updateTime()">
-        <option value="America/New_York">New York</option>
-        <option value="Europe/Paris">Paris</option>
-        <option value="Asia/Tokyo">Tokyo</option>
-      </select>
-      <p id="time"></p>
-    </div>
+<body background="images/paysage_neige.jpeg">
+    <Section>
+        <div class="completeinformation"> 
+            <div class="clock">
+
+                <h1>Horloge Universelle</h1>
+
+                <!-- <label for="timezone">Sélectionnez votre fuseau horaire :</label>
+                <select id="timezone" onchange="clock()">
+                    <option value="America/New_York">New York</option>
+                    <option value="Europe/Paris">Paris</option>
+                    <option value="Asia/Tokyo">Tokyo</option> -->
+
+                </select>
+                <span id="date"></span>
+                <span id="time"></span>
+
+            </div>
+            <div>
+                <input id="cityInput" type="text" placeholder="Indiquer une ville...">
+                <button id="searchBtn"> VALIDER</button>
+            </div>
+            <div class="visutemps">
+                <div>
+                    <img id="cloudImgInfo" class="sizepicture" src="Images/soleil.jpeg">
+                
+                </div>
+                <div>
+                    <p>Informations Ville:<span id="cityName"></span></p>
+                    <p>Informations Temps:<span id="cloudInfo"></span></p>
+                    <p>Informations Temperatures:<span id="temp"></span></p>
+                </div class="favOrg" >
+                <div id="weather-info">
+                    <button id="addFavBtn">⭐ Ajouter aux favoris</button>
+                    <h2 id="cityName"></h2>
+                    <p id="temp"></p>
+                </div>
+                <div>
+                <ul id="favoritesList"></ul>
+                </div>
+            </div>
+        </div>
+        <script src="horloge.js"></script>
+
+    </Section>
 </body>
-</html>
+    <!-- <section>
+        <div class="completeInformation">
+            <div class="clock">
+            <h1>Horloge Universelle</h1>
+
+            <label for="time-zone">Sélectionnez votre fuseau horaire :</label>
+            <select id="time-zone" onchange="updateTime()">
+                <option value="America/New_York">New York</option>
+                <option value="Europe/Paris">Paris</option>
+                <option value="Asia/Tokyo">Tokyo</option>
+            </select>
+
+            <p id="numerictime"></p>
+
+            </div>
+            
+        </div>
+    <script src="horloge.js"></script>
+
+    </section>
+    <section>
+
+
+
+    </section> -->
