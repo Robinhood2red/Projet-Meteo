@@ -35,6 +35,12 @@ async function fetchWeatherData(city) {
   }
 }
 
+function removeTownFromFavourite(city){
+  favouriteArray = favouriteArray.filter(i => i !== city);
+  localStorage.setItem("favouriteList", JSON.stringify(favouriteArray));
+  displayFavouriteTown();
+}
+
 
 async function displayFavouriteTown() {
   towns.textContent = "";
@@ -49,13 +55,22 @@ async function displayFavouriteTown() {
         let town = document.createElement("span");
         let title = document.createElement("h3");
         let degree = document.createElement("p");
+        let deleteButton = document.createElement("button");
+        let deleteIcon = document.createElement("i");
 
         title.textContent = city;
         degree.textContent = Math.round(tempData.main.temp)+"°C";
+        deleteIcon.classList.add("fa-solid", "fa-trash-arrow-up");
+        deleteButton.appendChild(deleteIcon);
+        deleteButton.classList.add("text-[#FFB7FF]","hover:text-red-500", "delay-50", "transition-colors", "cursor-pointer");
+        deleteButton.addEventListener("click", () => {
+          removeTownFromFavourite(city);
+        });
+        
 
-        town.classList.add("town");
+        town.classList.add("town", "flex", "gap-2", "justify-center");
         town.setAttribute('id', city);
-        town.append(title, degree);
+        town.append(title, degree, deleteButton);
 
         towns.appendChild(town);
         }
@@ -111,6 +126,7 @@ favouriteButton.addEventListener("click", () => {
       addFavouritesToLocalStorage(newFavoriteTown);
       displayFavouriteTown();
       favouriteSuccess.classList.add("text-emerald-400");
+      favouriteSuccess.classList.remove("text-red-500");
       favouriteSuccess.innerHTML = "La ville a bien été ajoutée aux favoris.";
     }
   }
