@@ -10,44 +10,44 @@
 </head>
 <body background="images/paysage_neige.jpeg">
     <Section>
-        <div class="completeinformation"> 
-            <div class="clock">
-
+        
+        <div class="clock">
                 <h1>Horloge Universelle</h1>
 
-                <!-- <label for="timezone">Sélectionnez votre fuseau horaire :</label>
-                <select id="timezone" onchange="clock()">
+                <select id="timezoneSelect">
                     <option value="America/New_York">New York</option>
                     <option value="Europe/Paris">Paris</option>
-                    <option value="Asia/Tokyo">Tokyo</option> -->
-
+                    <option value="Asia/Tokyo">Tokyo</option> 
                 </select>
-                <span id="date"></span>
-                <span id="time"></span>
-
-            </div>
-            <div>
+                <span Class="size" id="date"></span>
+                <span Class="size" id="time"></span>
                 <input id="cityInput" type="text" placeholder="Indiquer une ville...">
                 <button id="searchBtn"> VALIDER</button>
             </div>
-            <div class="visutemps">
-                <div>
-                    <img id="cloudImgInfo" class="sizepicture" src="Images/soleil.jpeg">
+        <div class="completeinformation"> 
+            
+            <div>
+                <img id="cloudImgInfo" class="sizepicture" src="Images/soleil.jpeg">
                 
-                </div>
-                <div>
+            </div>
+            <div class="centerText">
+                <div class= "InfoTown">
                     <p>Informations Ville:<span id="cityName"></span></p>
+                </div>
+                <div class= "InfoTown">
                     <p>Informations Temps:<span id="cloudInfo"></span></p>
+                </div>
+                <div class= "InfoTown">
                     <p>Informations Temperatures:<span id="temp"></span></p>
-                </div class="favOrg" >
-                <div id="weather-info">
-                    <button id="addFavBtn">⭐ Ajouter aux favoris</button>
-                    <h2 id="cityName"></h2>
-                    <p id="temp"></p>
                 </div>
-                <div>
+            </div>
+            <div id="weather-info">
+                <button id="addFavBtn">⭐ Ajouter aux favoris</button>
+                <h2 id="cityName"></h2>
+                <p id="temp"></p>
+            </div>
+            <div>
                 <ul id="favoritesList"></ul>
-                </div>
             </div>
         </div>
         <script src="horloge.js"></script>

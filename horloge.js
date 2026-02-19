@@ -26,6 +26,7 @@
 // setInterval(updateTime, 1000);
 // }
 function clock(){
+const selectTimeZone = document.getElementById("timezoneSelect").value;
 let horlogecomplete = new Date();
 
 let datecomplete = horlogecomplete.toLocaleDateString("fr-FR",{
@@ -33,7 +34,7 @@ let datecomplete = horlogecomplete.toLocaleDateString("fr-FR",{
     year:"numeric",
     month:"long",
     day:"numeric",
-    //timeZone:"long"  //  permet de mettre le fuseau 
+    timeZone:selectTimeZone  //  permet de mettre le fuseau 
 });
 
 let heure = horlogecomplete.toLocaleTimeString("fr-FR",{
@@ -41,7 +42,7 @@ let heure = horlogecomplete.toLocaleTimeString("fr-FR",{
     minute:"2-digit",
     second:"2-digit",
     hour12:false,
-    //timeZone: "value" //  permet de mettre le fuseau horaire geographique "UTC-04:00","UTC+01:00","UTC+09:00" 
+    timeZone: selectTimeZone //  permet de mettre le fuseau horaire geographique "UTC-04:00","UTC+01:00","UTC+09:00" 
 });
 
 document.getElementById("date").textContent = datecomplete;
