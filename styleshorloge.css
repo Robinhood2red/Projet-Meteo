@@ -7,26 +7,38 @@ margin:0;
 }
 .clock {
   margin: auto;
-  width: 300px;
+  width: 700px;
   text-align: center;
+  font-size: 2.5em;
 }
 
 .completeinformation {
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 h1 {
   margin-top: 0;
 }
-
+.size{
+  width: 3.5em;
+}
 #numerictime {
-  font-size: 40%;
   font-size: 4.5em;
 }
+.centerText{
+  display: flex;
+  flex-direction: column;
+  width: 35%; 
 
-label {
-  display: block;
-  margin-bottom: 10px;
 }
+.infoTown{
+  display: flex;
+  text-align: center;
+  font-size: 2.5em;
+}
+
 .date {
     color: #1e1e23;
     font-size: 1em;
@@ -42,9 +54,11 @@ label {
     }
 
 .sizepicture {
-  width: 20%;
+  width: 155%;
 }
 .sizepicture2 {
+  display: flex;
+  flex-direction: row;
   width: 120%;
 }
 .visutemps{
