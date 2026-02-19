@@ -1,0 +1,31 @@
+// -----------------------------------------------------------------------------------------
+// FICHIER : _legal-pages.scss (Mentions Légales & Confidentialité)
+// -----------------------------------------------------------------------------------------
+
+// Rappel : Applique bien la classe .api-body sur ton <body> ou utilise ce sélecteur
+.confBody {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  // Ton dégradé exact
+  background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 100%);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+    main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    }
+}
+  
+  h2 {
+    color: rgba(255, 255, 255, 0.95); // $text-color
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.8;      // Espacement pour le confort de lecture
+    text-align: left;      // Plus simple à lire pour les infos juridiques
+    margin: 0;
+  }

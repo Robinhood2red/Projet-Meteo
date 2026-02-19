@@ -59,7 +59,7 @@ header {
       text-decoration: none;
       color: $text-color;
       font-weight: 500;
-      font-size: 1rem;
+      font-size: 1.5rem;
       letter-spacing: 0.5px;
       transition: all 0.3s ease;
       position: relative; // ! SINON C'EST TOUT LE menuItem QUI EST SOULIGNé
@@ -178,10 +178,14 @@ a:hover {
     }
     .menu-burger {
         display: block;
+          a {
+            font-size: large;
+            font-weight: 700;
+          }
     }
     .weather-section {
       display: block;
-      padding: 25% 20px 20px 20px !important;
+      padding: 25% 20px 10% 20px !important;
     }
     header {
       section {
@@ -204,82 +208,177 @@ a:hover {
 }
 
 .weather-section {
-  padding: 20px;
+  padding: 5% 0 5% 0;
   @include flex-center;
 }
 
 // -----------------------------------------------EFFET VERRE------------------------------------------------
 .weather-card {
   background: $glass-bg;
-  backdrop-filter: blur(10px); // L'EFFET FLOU
+  backdrop-filter: blur(10px);
   border: 1px solid $glass-border;
-  border-radius: 20px;
-  padding: 40px;
+  border-radius: 25px;
+  padding: 60px;
   width: 100%;
-  max-width: 500px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  max-width: 700px;
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
   color: $text-color;
   text-align: center;
   z-index: 0;
 
-  // -------------------------------------------L'IMPUT--------------------------------------------------------
+  // -------------------------------------------L'INPUT ET BOUTON--------------------------------------------------------
   input {
     background: rgba(255, 255, 255, 0.9);
     border: none;
-    padding: 12px 20px;
-    border-radius: 30px;
+    padding: 15px 25px; // Plus grand
+    border-radius: 35px;
     outline: none;
-    width: 60%;
-    margin-bottom: 10px;
-    font-size: 1rem;
+    width: 65%;         // Un peu plus large
+    margin-bottom: 15px;
+    font-size: 1.2rem;  // Texte plus lisible
   }
 
   button {
     background: $primary-color;
     color: white;
     border: none;
-    padding: 12px 20px;
-    border-radius: 30px;
+    padding: 15px 30px; // Plus grand
+    border-radius: 35px;
     cursor: pointer;
     transition: transform 0.2s, background 0.3s;
     font-weight: bold;
+    font-size: 1.1rem;
 
-    &:hover { // ! ANIMATION BOUTON
+    &:hover {
       background: $secondary-color;
-      transform: translateY(-2px);
+      transform: translateY(-3px); // Accentuation de l'effet
     }
   }
 }
 
-// ----------------------------------------AFFICHAGE DONNéES------------------------------------------
+// ----------------------------------------AFFICHAGE DONNÉES AGRANDI------------------------------------------
 #cityName {
-  font-size: 2.5rem;
-  margin: 20px 0;
+  font-size: 4rem;
+  margin: 30px 0;
   font-weight: 300;
   text-transform: capitalize;
 }
 
 #weatherDetails {
   display: flex;
-  flex-wrap: wrap; // ! POUR QUE LES ELEMENTS PASSENT à LA LIGNE
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 40px;
   text-align: left;
 
   p {
-    flex: 0 0 48%; // ! PREND ENVIRON LA MOITIÉ DE LA LARGEUR (2 colonnes)
-    background: rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    font-size: 1rem;
-    box-sizing: border-box; // ! POUR QUE LE PADDING NE CASSE PAS LA DISPOSITION 2 par 2
+    flex: 0 0 47%;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    box-sizing: border-box;
 
     span {
       display: block;
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.6rem;
       color: #fab1a0;
+      margin-top: 5px;
+    }
+  }
+}
+
+//---------------------------------- FOOTER-------------------------------------
+footer {
+  background-color: $header-bg;
+  backdrop-filter: blur(5px);
+  border-top: 1px solid $glass-border;
+  padding: 1.5rem 0 0 0; 
+  width: 100%;
+  color: $text-color;
+
+  section {
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0 5%;
+      position: relative; 
+
+      .animLogo {
+        cursor: pointer;
+        display: inline-block;
+
+        img {
+          width: 80px; 
+          filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      nav {
+        @media (min-width: 901px) {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      ul {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        margin: 0 !important;
+        padding: 0;
+
+        li a {
+          color: $text-color;
+          text-decoration: none;
+          font-weight: 500;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $header-accent;
+          }
+        }
+
+        @media (max-width: 700px) {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+          margin: 1.5rem 0;
+        }
+      }
+
+      .footer-socials {
+        display: flex;
+        gap: 20px;
+
+        .groslogo {
+          transition: transform 0.3s ease;
+          display: inline-block;
+          
+          &:hover {
+            transform: scale(1.2);
+            color: $header-accent; 
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      margin-top: 1.5rem;
+      border-top: 1px solid $glass-border;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      @include flex-center;
     }
   }
 }
