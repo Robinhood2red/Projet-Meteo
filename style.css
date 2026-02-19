@@ -24,10 +24,17 @@ header section div {
   align-items: center;
 }
 header section div img {
-  height: 150px;
+  height: 130px;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-  padding-top: 1.5rem;
-  position: absolute;
+}
+header .logo {
+  display: inline-block;
+}
+header .logo img {
+  transition: 0.3s ease-in-out;
+}
+header .logo:hover img {
+  transform: scale(1.15);
 }
 header .menu {
   display: flex;
@@ -79,7 +86,6 @@ nav {
 
 .menu-burger nav {
   top: 0;
-  z-index: 1;
   width: 100%;
 }
 
@@ -101,7 +107,9 @@ nav {
   transition: 0.4s cubic-bezier(0.77, 0, 0.18, 1);
 }
 .menu-burger ul li {
-  padding: 0 20px 0 0;
+  padding: 0 30px 0 0;
+  display: flex;
+  align-items: center;
 }
 
 .menu-burger.active ul {
@@ -163,15 +171,15 @@ a:hover {
   .header1 {
     display: none;
   }
-  .header1 img {
-    position: absolute;
-  }
   .menu-burger {
     display: block;
   }
   .weather-section {
     display: block;
-    padding: 15% 20px 20px 20px !important;
+    padding: 25% 20px 20px 20px !important;
+  }
+  header section div {
+    display: none;
   }
 }
 .api-body {
