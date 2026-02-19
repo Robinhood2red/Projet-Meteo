@@ -101,10 +101,17 @@ h1 {
   margin-left: 15%;
   margin-top: 3%;
 }
-.sizepicture2 {
+.sizepicture2{
   display: flex;
   flex-direction: column;
   width: 120%;
+}
+.sizepicture3{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-left: 15%;
+  margin-top: 3%;
 }
 .visutemps{
   width:96%;
