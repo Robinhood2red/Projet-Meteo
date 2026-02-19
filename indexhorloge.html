@@ -9,21 +9,30 @@
     
 </head>
 <body background="images/paysage_neige.jpeg">
-    <Section>
-        
+    <Section class="interface">
         <div class="clock">
+            <div>    
                 <h1>Horloge Universelle</h1>
-
-                <select id="timezoneSelect">
-                    <option value="America/New_York">New York</option>
-                    <option value="Europe/Paris">Paris</option>
-                    <option value="Asia/Tokyo">Tokyo</option> 
-                </select>
-                <span Class="size" id="date"></span>
-                <span Class="size" id="time"></span>
-                <input id="cityInput" type="text" placeholder="Indiquer une ville...">
-                <button id="searchBtn"> VALIDER</button>
             </div>
+            <div class="sizeMenu">
+                SELECTIONNEZ VOTRE FUSEAU HORAIRE:
+            </div>
+            <select class="config2Btn" id="timezoneSelect">
+                <option value="America/New_York">New York</option>
+                <option value="Europe/Paris">Paris</option>
+                <option value="Asia/Tokyo">Tokyo</option> 
+            </select>
+            <div class="marginDate">   
+                <span Class="size" id="date"></span>
+            </div> 
+            <div>
+                <span Class="size" id="time"></span>
+            </div>
+            <div class="align"> 
+                <input class="config2Btn" id="cityInput" type="text" placeholder="Indiquer une ville...">
+                <button class="configBtn" id="searchBtn"> VALIDER</button>
+            </div>  
+        </div>
         <div class="completeinformation"> 
             
             <div>
@@ -32,17 +41,17 @@
             </div>
             <div class="centerText">
                 <div class= "InfoTown">
-                    <p>Informations Ville:<span id="cityName"></span></p>
+                    <p><b>Informations Ville:</b><span id="cityName"></span></p>
                 </div>
                 <div class= "InfoTown">
-                    <p>Informations Temps:<span id="cloudInfo"></span></p>
+                    <p><b>Informations Temps:</b><span id="cloudInfo"></span></p>
                 </div>
                 <div class= "InfoTown">
-                    <p>Informations Temperatures:<span id="temp"></span></p>
+                    <p><b>Informations Temperatures:</b><span id="temp"></span></p>
                 </div>
             </div>
-            <div id="weather-info">
-                <button id="addFavBtn">⭐ Ajouter aux favoris</button>
+            <div class="align">
+                <button class="configBtn" id="addFavBtn">⭐ Ajouter aux favoris</button>
                 <h2 id="cityName"></h2>
                 <p id="temp"></p>
             </div>

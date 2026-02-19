@@ -6,16 +6,24 @@ background-size:cover;
 margin:0;
 }
 .clock {
+  display: flex;
+  flex-direction: column;
   margin: auto;
   width: 700px;
   text-align: center;
   font-size: 2.5em;
 }
+.interface{
+  background-color: rgb(136, 219, 237);
+  margin-left: 30%;
+  margin-right:30%;
+  margin-top: 5%;
+}
 
 .completeinformation {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-content: center;
 }
 
 h1 {
@@ -27,6 +35,15 @@ h1 {
 #numerictime {
   font-size: 4.5em;
 }
+
+.utc{
+  display: flex;
+  justify-content: center;
+}
+.sizeMenu{
+  font-size: 1em;
+  margin-bottom: 3%;
+}
 .centerText{
   display: flex;
   flex-direction: column;
@@ -35,11 +52,37 @@ h1 {
 }
 .infoTown{
   display: flex;
-  text-align: center;
+  width: 300px; 
   font-size: 2.5em;
+  margin-top: 5%;
 }
+.align{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3%;
+}
+      
+.marginDate{
+  margin-top: 3%;
+}
+.configBtn{
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  width: 300px;
+  height: 40px;
+  text-align: center;
 
-.date {
+}
+.config2Btn{
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  width: 670px;
+  height: 50px;
+}
+.date{
     color: #1e1e23;
     font-size: 1em;
     margin-top: 30px;
@@ -51,14 +94,16 @@ h1 {
     padding-bottom: 13px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    }
+}
 
 .sizepicture {
-  width: 155%;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 3%;
 }
 .sizepicture2 {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 120%;
 }
 .visutemps{
