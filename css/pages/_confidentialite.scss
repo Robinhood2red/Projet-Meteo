@@ -1,0 +1,61 @@
+// --- VARIABLES GLOBALES ---
+$primary-color: #6c5ce7;
+$secondary-color: #a29bfe;
+$text-color: rgba(255, 255, 255, 0.95);
+$glass-bg: rgba(255, 255, 255, 0.12);
+$glass-border: rgba(255, 255, 255, 0.2);
+
+// --- VARIABLES DU HEADER ADAPTÉES ---
+$header-bg: rgba(0, 0, 0, 0.2);
+$header-accent: #fab1a0;
+
+// --------------------------------------- PAGE LÉGALE ----------------------------------------------
+// -----------------------------------------------------------------------------------------
+// FICHIER : _legal.scss (Page Politique de Confidentialité)
+// -----------------------------------------------------------------------------------------
+
+// On applique le dégradé sur le body pour cette page spécifique
+.confBody {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 100%); // Ton dégradé bleu/violet
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+}
+.confTitle{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.contact-lecture {
+  // --- EFFET VERRE SOMBRE (Pour la lisibilité sur ton dégradé) ---
+  background: rgba(0, 0, 0, 0.4); // Fond noir transparent
+  backdrop-filter: blur(15px);   // Flou intense pour isoler le texte
+  border: 1px solid rgba(255, 255, 255, 0.2); // $glass-border
+  border-radius: 25px;
+  
+  // --- DIMENSIONS & ESPACEMENT ---
+  padding: 60px;
+  width: 95%;
+  max-width: 900px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  
+  // --- STYLE DU TEXTE (Tout est dans le h2) ---
+  h2 {
+    color: rgba(255, 255, 255, 0.95); // $text-color
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: justify;
+    margin: 0;
+  }
+}
