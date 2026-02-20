@@ -4,35 +4,132 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="../style.css" />
     <title>Favoris</title>
   </head>
-  <body>
-    <header></header>
-    <main id="favourite_main">
-      <section class="favorites">
-        <h1>Liste des favoris</h1>
+  <body
+    class="flex flex-col items-center bg-linear-to-t from-[#0984e3] to-[#6c5ce7] min-h-screen"
+  >
+    <header>
+      <section>
+        <div class="header1">
+          <a class="logo" href="../index.html">
+            <img src="../Images/LOGO.png" alt="LOGO_météo" />
+          </a>
+
+          <nav id="navMenu">
+            <ul class="menu">
+              <li><a class="menuItem" href="./API.html">Météo détaillée</a></li>
+              <li><a class="menuItem" href="../indexhorloge.html">Météo</a></li>
+              <li>
+                <a class="menuItem" href="../pages/favoris.html">Vos favoris</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="menu-burger">
+          <nav>
+            <div class="navigation">
+              <ul class="navLink">
+                <li>
+                  <a class="menuItem" href="../index.html"
+                    ><img src="../Images/LOGO.png" alt="LOGO_météo"
+                  /></a>
+                </li>
+                <li><a href="./API.html">Météo détaillée</a></li>
+                <li><a href="../indexhorloge.html">Météo</a></li>
+                <li><a href="../pages/favoris.html">Vos favoris</a></li>
+              </ul>
+              <div class="basculant"></div>
+            </div>
+          </nav>
+        </div>
+      </section>
+    </header>
+
+    <main id="favourite_main" class="flex-grow">
+      <section
+        class="favorites flex flex-col mt-30 bg-white/20 text-[#F8F8F8] backdrop-blur-xl border border-white px-4"
+      >
+        <h1 class="text-center text-xl py-2">Liste des villes favorites</h1>
         <div id="fav-list">
-          <div class="town-container flex bg-gray-50 gap-5" id="town-container">
-            <span>
-              <input
-                type="text"
-                id="favourite-input"
-                placeholder="Entrez un nom de ville ici.."
-              />
-              <button id="favourite-button">Ajouter aux favoris</button>
-              <span id="favourite-success-box"></span>
+          <div
+            class="town-container flex flex-col bg-inherit gap-5"
+            id="town-container"
+          >
+            <span class="flex flex-col gap-1">
+              <div class="flex flex-wrap justify-center gap-4">
+                <input
+                  type="text"
+                  id="favourite-input"
+                  placeholder="Entrez un nom de ville ici.."
+                  class="align-center border px-2 rounded border-white bg-white/30"
+                />
+                <button
+                  id="favourite-button"
+                  class="bg-[#6200FF] border border-white hover:bg-[#6200FF]/40 delay-50 transition-colors hover:cursor-pointer rounded px-2 py-1"
+                >
+                  Ajouter aux favoris
+                </button>
+              </div>
+
+              <span id="favourite-success-box" class="text-center"></span>
             </span>
-            <div id="towns">
+            <div id="towns" class="flex flex-col gap-4 mb-4">
               <h2 id="towns_error"></h2>
               <!--TODO: ajouter un ID custom en js avec le nom de la ville après l'avoir fetch-->
             </div>
-            <button class="deleteFavButton bg-red-500 px-2 py-1">Supp</button>
           </div>
         </div>
       </section>
     </main>
-    <footer></footer>
+    
+    <footer class="">
+    <section>
+        <div class="footer-content">
+          <div class="animLogo"><a href="./index.html">
+            <img class="logo" src="/Images/LOGO.png" alt="DLW Logo"/>
+          </div>
+
+          <nav>
+            <ul>
+              <li><a href="./pages/mentions_légales.html">Mentions Légales</a></li>
+              <li><a href="/pages/confidentialité.html">Confidentialité</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-socials">
+
+            <a class="groslogo" href="#" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a class="groslogo" href="#" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a class="groslogo" href="#" aria-label="Twitter"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+            <a class="groslogo" href="#" aria-label="Pinterest"
+              ><i class="fa-brands fa-pinterest"></i
+            ></a>
+            <a class="groslogo" href="#" aria-label="Youtube"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>2026 DLW - Tous droits réservés</p>
+        </div>
+    </section>
+</footer>
     <script src="../js/favoris.js"></script>
   </body>
 </html>
