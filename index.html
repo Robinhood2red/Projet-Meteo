@@ -3,20 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <title>Accueil</title>
 </head>
-<body>
-   <section class="menuBox2">
-        <div class="centerTextTitle">
-             <h1>CONSULTATIONS METEO</h1> 
-        </div>
-        <div class="boxBlock">
-            <div class="imgAlign">
-                <img class="choicePage" src="Images/pagetime.jpeg">
-                <img class="choicePage" src="Images/pagetime3.jpeg">
-                <img class="choicePage" src="Images/pagetime2.jpeg">
+<body class="api-body">
+    <header>
+        <section>
+            <div class="header1">
+                <a class="logo" href="../index.html">
+                    <img src="../Images/LOGO.png" alt="LOGO_météo">
+                </a>
+
+                <nav id="navMenu">
+                    <ul class="menu">
+                    <li><a class="menuItem" href="#">Météo détaillée</a></li>
+                    <li><a class="menuItem" href="../indexhorloge.html">Météo</a></li>
+                    <li><a class="menuItem" href="../pages/favoris.html">Vos favoris</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="menu-burger"> 
+                    <nav>
+                        <div class="navigation">
+                            <ul class="navLink">
+                                <li><a class="menuItem" href="#"><img src="../Images/LOGO.png" alt="LOGO_météo"></a></li>
+                                <li><a href="./pages/API.html">Météo détaillée</a></li>
+                                <li><a href="./indexhorloge.html">Météo</a></li>
+                                <li><a href="./pages/favoris.html">Vos favoris</a></li>
+                            </ul>
+                            <div class="basculant"></div>
+                        </div>
+                    </nav>
+                </div>
+        </section>
+    </header>
+
+   <section>
+        <div class="welcome">
+            <div class="wTiltle">
+                <h1>CONSULTATIONS MÉTÉO</h1> 
+            </div>
+            <div class="welcomeImg">
+                <div class="imgDetail">
+                    <a href="./pages/API.html"><img class="wImg" src="Images/pagetime.jpeg">
+                    <span class="wTxt">Météo détaillée</span></a>
+                </div>
+                <div class="imgDetail">
+                    <a href="./indexhorloge.html"><img class="wImg" src="Images/pagetime3.jpeg">
+                    <span class="wTxt">Météo</span></a>
+                </div>
+                <div class="imgDetail">
+                    <a href="./pages/favoris.html"><img class="wImg" src="Images/pagetime2.jpeg">
+                    <span class="wTxt">Vos favoris</span></a>
+                </div>
             </div>
         </div>
     </section>
+
+    <footer>
+    </div>
+    <section>
+        <div class="footer-content">
+          <div class="animLogo"><a href="./index.html">
+            <img class="logo" src="/Images/LOGO.png" alt="DLW Logo"/>
+          </div>
+
+          <nav>
+            <ul>
+              <li><a href="/pages/mentions_légales.html">Mentions Légales</a></li>
+              <li><a href="/pages/confidentialité.html">Confidentialité</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-socials">
+
+            <a class="groslogo" href="#" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a class="groslogo" href="#" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a class="groslogo" href="#" aria-label="Twitter"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+            <a class="groslogo" href="#" aria-label="Pinterest"
+              ><i class="fa-brands fa-pinterest"></i
+            ></a>
+            <a class="groslogo" href="#" aria-label="Youtube"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>2026 DLW - Tous droits réservés</p>
+        </div>
+    </section>
+</footer>
+<script src="/js/API.js"></script>
 </body>
 </html>

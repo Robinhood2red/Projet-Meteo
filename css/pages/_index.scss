@@ -1,0 +1,39 @@
+.welcome {    
+    padding-top: 5%;
+    padding-bottom: 5%
+}
+
+.wTiltle {
+    @include flex-center;
+    font-size: 2rem;
+    font-weight: bolder;
+        @media screen and (max-width: 1700px) {
+            padding-top: 10%;
+        }
+}
+
+.welcomeImg {
+    @include flex-center;
+    flex-wrap: wrap;
+}
+
+.imgDetail { // ! RESPONSIVE EN DESSOUS DE 17OO 
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+        img {
+            border-radius: 10px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.397));
+        }
+        &:hover img {
+        transition: 0.3s ease;
+        transform: scale(1.02);
+        }
+        .wTxt {
+           color: $text-color;
+           font-size: 30px;
+           font-weight: bolder;
+           @include flex-center;
+           padding-top: 3%;
+        }
+}
