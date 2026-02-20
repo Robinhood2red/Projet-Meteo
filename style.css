@@ -414,18 +414,36 @@ h1 {
   justify-content: center;
   align-content: center;
 }
+
 .menuBox2{
-  display:flex;
-  justify-content: center;
-  align
-}
-.imgAlign{
-  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
   
+}
+
+.imgAlign{
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 20px;
+margin-left: 20%;
+}
+.choicePage {
+  width: 300px;            
+  height: auto;
+  border-radius: 8px;  
+  background-color: #046a80;
+}
+.centerTextTitle {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  text-transform: uppercase;
 }
 .favOrg {
   display: flex;
-  justify-content: ar;
+  justify-content: center;
   font-size: 40%;
 
 }/*# sourceMappingURL=style.css.map */
