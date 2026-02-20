@@ -45,7 +45,7 @@ header .menu .menuItem {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.95);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.5rem;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
   position: relative;
@@ -174,9 +174,13 @@ a:hover {
   .menu-burger {
     display: block;
   }
+  .menu-burger a {
+    font-size: large;
+    font-weight: 700;
+  }
   .weather-section {
     display: block;
-    padding: 25% 20px 20px 20px !important;
+    padding: 25% 20px 10% 20px !important;
   }
   header section div {
     display: none;
@@ -193,7 +197,7 @@ a:hover {
 }
 
 .weather-section {
-  padding: 20px;
+  padding: 5% 0 5% 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -203,11 +207,11 @@ a:hover {
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  padding: 40px;
+  border-radius: 25px;
+  padding: 60px;
   width: 100%;
-  max-width: 500px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  max-width: 700px;
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
   color: rgba(255, 255, 255, 0.95);
   text-align: center;
   z-index: 0;
@@ -215,31 +219,32 @@ a:hover {
 .weather-card input {
   background: rgba(255, 255, 255, 0.9);
   border: none;
-  padding: 12px 20px;
-  border-radius: 30px;
+  padding: 15px 25px;
+  border-radius: 35px;
   outline: none;
-  width: 60%;
-  margin-bottom: 10px;
-  font-size: 1rem;
+  width: 65%;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
 }
 .weather-card button {
   background: #6c5ce7;
   color: white;
   border: none;
-  padding: 12px 20px;
-  border-radius: 30px;
+  padding: 15px 30px;
+  border-radius: 35px;
   cursor: pointer;
   transition: transform 0.2s, background 0.3s;
   font-weight: bold;
+  font-size: 1.1rem;
 }
 .weather-card button:hover {
   background: #a29bfe;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 #cityName {
-  font-size: 2.5rem;
-  margin: 20px 0;
+  font-size: 4rem;
+  margin: 30px 0;
   font-weight: 300;
   text-transform: capitalize;
 }
@@ -248,22 +253,95 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 40px;
   text-align: left;
 }
 #weatherDetails p {
-  flex: 0 0 48%;
-  background: rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  font-size: 1rem;
+  flex: 0 0 47%;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
   box-sizing: border-box;
 }
 #weatherDetails p span {
   display: block;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  color: #fab1a0;
+  margin-top: 5px;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.5rem 0 0 0;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.95);
+}
+footer section .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 5%;
+  position: relative;
+}
+footer section .footer-content .animLogo {
+  cursor: pointer;
+  display: inline-block;
+}
+footer section .footer-content .animLogo img {
+  width: 80px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+footer section .footer-content .animLogo img:hover {
+  transform: scale(1.1);
+}
+@media (min-width: 901px) {
+  footer section .footer-content nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+footer section .footer-content ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0 !important;
+  padding: 0;
+}
+footer section .footer-content ul li a {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+footer section .footer-content ul li a:hover {
+  color: #fab1a0;
+}
+@media (max-width: 700px) {
+  footer section .footer-content ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+}
+footer section .footer-content .footer-socials {
+  display: flex;
+  gap: 20px;
+}
+footer section .footer-content .footer-socials .groslogo {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+footer section .footer-content .footer-socials .groslogo:hover {
+  transform: scale(1.2);
   color: #fab1a0;
 }
 
@@ -446,4 +524,79 @@ margin-left: 20%;
   justify-content: center;
   font-size: 40%;
 
+footer section .footer-bottom {
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.8rem;
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confBody {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 100%);
+  font-family: "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.confBody main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.confTitle {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.contact-lecture {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 60px;
+  width: 95%;
+  max-width: 900px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+.contact-lecture h2 {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: justify;
+  margin: 0;
+}
+
+.confBody {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 100%);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.confBody main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+h2 {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: left;
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */
