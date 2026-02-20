@@ -10,16 +10,13 @@ $header-bg: rgba(0, 0, 0, 0.2);
 $header-accent: #fab1a0;
 
 // --------------------------------------- PAGE LÉGALE ----------------------------------------------
-// -----------------------------------------------------------------------------------------
-// FICHIER : _legal.scss (Page Politique de Confidentialité)
-// -----------------------------------------------------------------------------------------
 
 // On applique le dégradé sur le body pour cette page spécifique
 .confBody {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 100%); // Ton dégradé bleu/violet
+  background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 100%);
   font-family: 'Segoe UI', Roboto, sans-serif;
   display: flex;
   flex-direction: column;
@@ -29,6 +26,9 @@ $header-accent: #fab1a0;
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
+      @media (min-width: 900px) {
+          padding-top: 10% !important;
+        }
   }
 }
 .confTitle{

@@ -344,6 +344,15 @@ footer section .footer-content .footer-socials .groslogo:hover {
   transform: scale(1.2);
   color: #fab1a0;
 }
+footer section .footer-bottom {
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.8rem;
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 body {
   color: black;
@@ -368,6 +377,7 @@ body {
   margin-left: 30%;
   margin-right: 30%;
   margin-top: 5%;
+  margin-bottom: 5% !important;
 }
 
 .completeinformation {
@@ -492,28 +502,11 @@ h1 {
   justify-content: center;
   align-content: center;
 }
-.menuBox2{
-  display:flex;
-  justify-content: center;
-  align
-}
-.imgAlign{
-  display: flex;
-  
-}
+
 .favOrg {
   display: flex;
   justify-content: ar;
   font-size: 40%;
-
-footer section .footer-bottom {
-  margin-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 0.8rem;
-  opacity: 0.7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .confBody {
@@ -531,6 +524,11 @@ footer section .footer-bottom {
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
+}
+@media (min-width: 900px) {
+  .confBody main {
+    padding-top: 10% !important;
+  }
 }
 
 .confTitle {
