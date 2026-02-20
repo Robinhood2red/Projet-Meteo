@@ -689,4 +689,85 @@ h1 {
     margin-bottom: 20%;
     margin-right: 20%;
   }
+}
+
+.confTitle {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.contact-lecture {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 60px;
+  width: 95%;
+  max-width: 900px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+.contact-lecture h2 {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: justify;
+  margin: 0;
+}
+
+h2 {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: left;
+  margin: 0;
+}
+
+.welcome {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.wTiltle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+@media screen and (max-width: 1700px) {
+  .wTiltle {
+    padding-top: 10%;
+  }
+}
+
+.welcomeImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.imgDetail {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+}
+.imgDetail img {
+  border-radius: 10px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.397));
+}
+.imgDetail:hover img {
+  transition: 0.3s ease;
+  transform: scale(1.02);
+}
+.imgDetail .wTxt {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 30px;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3%;
 }/*# sourceMappingURL=style.css.map */
